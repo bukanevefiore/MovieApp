@@ -19,8 +19,9 @@ const useFetch = (initialUrl, initialParams = {}, skip = false) => {
   const fetchData = async () => {
     if (skip) return;
     setIsLoading(true);
+    console.log(queryString);
     try {
-      if (queryString === 'genre=' || queryString === '') {
+      if (queryString === '?genre=' || queryString === '') {
         const response = await axios.get(url);
         setData(response.data);
       } else {

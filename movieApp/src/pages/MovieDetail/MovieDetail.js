@@ -11,14 +11,14 @@ export default function MovieDetail() {
   const {data: moviesData} = useFetch(URL);
   const route = useRoute();
   const {movie} = route.params;
-
+/*
   const recommendedMovies = moviesData.filter(m => {
     return m.genre.some(g => movie.genre.includes(g));
   });
-
+*/
   return (
     <SafeAreaView style={styles.container}>
-      <DetailCard movie={movie} recommendedMovies={recommendedMovies} />
+      <DetailCard movie={movie} recommendedMovies={moviesData} />
     </SafeAreaView>
   );
 }
